@@ -1,1 +1,44 @@
-<div class="alert alert-success">helo</div>
+<div class="container">
+    <div class="row">
+      <div class="col-12 ">
+        <div class="card card-header text-white bg-primary">
+          <h1>
+            Catalogue des PFEs (ESSAT)
+          </h1>
+        </div>
+      </div>
+    </div>
+    <div class="row" style="margin-top: 15px;">
+      <div class="col-md-2 ">
+  
+        <button routerLink="/add" type="button" class="btn btn-danger">ADD PFE</button>
+      </div>
+      <div class="col-md-3 ">
+        <input class="form-control mr-sm-2" type="search" placeholder="Titre du Pfe a chercher" aria-label="Search">
+      </div>
+  
+      <div class="col-md-2 ">
+        <button type="button" class="btn btn-primary">cherche un PFE</button>
+      </div>
+    </div>
+  
+    <div class="row" style="margin-top: 50px;">
+  
+      <div class="col-md-3">
+        <div class="list-group">
+          <a href="/type" class="list-group-item list-group-item-action active">
+            Tous les PFEs
+            <span class="badge badge-warning badge-pill">{{count}}</span>
+          </a>
+          <tr *ngFor="let t of types ">
+            <a routerLink="/type/{{t.id}}" class="list-group-item list-group-item-action">{{t.nom}}
+              <span class="badge badge-info badge-pill">{{t.listP.length}}</span>
+            </a>
+          </tr>
+        </div>
+      </div>
+      <div class="col-md-8">
+        <router-outlet></router-outlet>
+      </div>
+    </div>
+  </div>

@@ -38,7 +38,7 @@ public class Rest {
 	}
 	
 	@GetMapping("/search/{search}")
-	public List<Pfe> count(@PathVariable("search") String s){
+	public List<Pfe> search(@PathVariable("search") String s){
 		return daopfe.search(s);		
 	}
 	
@@ -55,9 +55,9 @@ public class Rest {
 	 
 	@PostMapping("/add")
 	public void get3(@RequestBody Pfe pfe ){
-	 daopfe.save(pfe);
-		
+	 daopfe.save(pfe);		
 	}
+	
 	@DeleteMapping("/delete/{id}")
 	public void get4(@PathVariable("id") int id){
 		daopfe.deleteById(id);
