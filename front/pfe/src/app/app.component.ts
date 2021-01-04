@@ -13,6 +13,7 @@ export class AppComponent implements OnInit {
   title = 'pfe';
   types: TypePfe[];
   count: number;
+  search: string;
 
   constructor(private typeService: TypeService,
               private pfeService: PfeService,
@@ -39,5 +40,9 @@ export class AppComponent implements OnInit {
       },
       err => {console.log('count error!!'); }
     );
+  }
+
+  doSearch() {
+    this.route.navigate(['search/' + this.search]);
   }
 }

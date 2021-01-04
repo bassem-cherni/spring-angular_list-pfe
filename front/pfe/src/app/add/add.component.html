@@ -1,1 +1,23 @@
-<p>add works!</p>
+<div class="card card-header text-white bg-success">
+    <h6>
+        Add PFE
+    </h6>
+</div>
+<form class="form-horizontal">
+    <div class="form-group">
+        <label for="inputEmail3" class="col-sm-9 control-label">Titre PFE</label>
+        <div class="col-sm-13">
+            <input  class="form-control" type="text" name="titre" [(ngModel)]="pfe.titre">
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="selected" class="col-sm-9 control-label">Type PFE</label>
+        <select id="Selected" class="form-control" name="type" [(ngModel)]="pfe.type">
+           
+            <option *ngFor="let t of types "  [ngValue]="t" >{{t.nom}}</option>
+          
+        </select>
+    </div>
+    <button type="button" class="btn btn-primary btn-lg btn-block" (click)=save()>Ajouter un PFE</button>
+</form>

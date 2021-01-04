@@ -14,11 +14,11 @@
         <button routerLink="/add" type="button" class="btn btn-danger">ADD PFE</button>
       </div>
       <div class="col-md-3 ">
-        <input class="form-control mr-sm-2" type="search" placeholder="Titre du Pfe a chercher" aria-label="Search">
+        <input class="form-control mr-sm-2" type="text" [(ngModel)]="search" placeholder="Titre du Pfe a chercher" aria-label="Search">
       </div>
   
       <div class="col-md-2 ">
-        <button type="button" class="btn btn-primary">cherche un PFE</button>
+        <button type="button" (click)="doSearch()" class="btn btn-primary">cherche un PFE</button>
       </div>
     </div>
   
